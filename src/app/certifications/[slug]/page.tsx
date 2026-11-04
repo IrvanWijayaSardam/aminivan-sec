@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 type Props = { params: Promise<{ slug: string }> };
 type Cert = { title: string; type: string; date: string; location: string; issuer: string; description: string; pdf?: string };
 
@@ -16,7 +18,7 @@ export default async function CertPage({ params }: Props) {
   const { slug } = await params;
   const cert = certs[slug];
   if (!cert) return null;
-  return <><header className="top"><div className="wrap nav"><Link className="brand" href="/">irvan<span>@portfolio</span>:~$</Link><nav><Link href="/">home</Link><Link href="/projects">projects</Link><Link href="/certifications">certifications</Link><Link href="/#contact">contact</Link></nav><span className="status">CREDENTIAL FILE</span></div></header><main><div className="wrap detail"><div className="kicker">CERTIFICATION / {slug}</div><h1>{cert.title}</h1><div className="project-meta"><span>{cert.type}</span><span>{cert.date}</span><span>{cert.location}</span></div><p className="lead">Issued by <strong>{cert.issuer}</strong></p><div className="card"><h2>About this certification</h2><p>{cert.description}</p></div><div className="actions">{cert.pdf && <a className="btn" href={cert.pdf} target="_blank" rel="noreferrer">View certificate PDF ↗</a>}<Link className="btn secondary" href="/certifications">Back to certifications ↩</Link></div></div></main><footer className="wrap"><span>© {new Date().getFullYear()} Irvan Wijaya</span></footer></>;
+  return <><header className="top"><div className="wrap nav"><Link className="brand" href="/">irvan<span>@portfolio</span>:~$</Link><nav><Link href="/">home</Link><Link href="/projects">projects</Link><Link href="/certifications">certifications</Link><Link href="/#contact">contact</Link></nav><span className="status">CREDENTIAL FILE</span></div></header><main><div className="wrap detail"><div className="kicker">CERTIFICATION / {slug}</div><h1>{cert.title}</h1><div className="project-meta"><span>{cert.type}</span><span>{cert.date}</span><span>{cert.location}</span></div><p className="lead">Issued by <strong>{cert.issuer}</strong></p><div className="card"><h2>About this certification</h2><p>{cert.description}</p></div><div className="actions">{cert.pdf && <a className="btn" href={`${BASE}${cert.pdf}`} target="_blank" rel="noreferrer">View certificate PDF ↗</a>}<Link className="btn secondary" href="/certifications">Back to certifications ↩</Link></div></div></main><footer className="wrap"><span>© {new Date().getFullYear()} Irvan Wijaya</span></footer></>;
 }
 
 export function generateStaticParams() { return Object.keys(certs).map((slug) => ({ slug })); }
