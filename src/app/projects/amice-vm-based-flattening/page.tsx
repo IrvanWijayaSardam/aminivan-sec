@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How Hard Can You Make It?, Code Virtualization | Irvan Wijaya",
+  title: "How Hard Can You Make It? · VM-Based Flattening | Irvan Wijaya",
   description:
     "Leaning on AI to reverse-engineer Android native libraries raised a question: how much RE difficulty can you add back? Measuring a plain build against amice's obfuscation and VM-flattening in the binary, up to where real code virtualization would begin.",
 };

@@ -4,7 +4,7 @@ import { ProjectCards } from "@/components/ProjectCards";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const mobileSecurity = [
-  ["How Hard Can You Make It? — Code Virtualization", "Leaning on AI to reverse native libs raised a question: how much RE difficulty can you add back? Measuring plain vs. amice's obfuscation and VM-flattening in the binary, up to where real code virtualization begins.", "code-virtualization-rasp", ""],
+  ["How Hard Can You Make It? · VM-Based Flattening", "Leaning on AI to reverse native libs raised a question: how much RE difficulty can you add back? Measuring plain vs. amice's obfuscation and VM-flattening in the binary, up to where real code virtualization begins.", "amice-vm-based-flattening", ""],
   ["Tomoro Account Takeover Android", "Mobile security assessment and Android application analysis.", "tomoro-account-takeover-android", `${BASE}/images/projects/mobile-security/tomoro.jpg`],
   ["Android Unity Game Hack", "Unity Android reverse engineering and emulator-detection research.", "android-unity-game-hack", ""],
   ["Android Backdoor", "Android application security learning project focused on defensive analysis.", "android-backdoor", ""],

@@ -99,14 +99,14 @@ export const experienceDialogs: Record<string, DialogData> = {
 };
 
 export const projectDialogs: Record<string, DialogData> = {
-  "code-virtualization-rasp": {
-    title: "A Matter of Time, RASP Obfuscation",
+  "amice-vm-based-flattening": {
+    title: "How Hard Can You Make It? · VM-Based Flattening",
     subtitle: "Reverse-Engineering Research · static analysis",
     meta: "2025",
     overview: "A static reverse-engineering study comparing a sample RASP native library compiled plain versus through the amice LLVM obfuscator, measuring exactly what one obfuscation pass costs a reverser, and why code virtualization is the next tier.",
     whatIDid: [
       "Measured both ARM64 .so files directly with the NDK llvm toolchain: file and section sizes, instruction counts, and per-technique mnemonic tallies.",
-      "Mapped each amice pass, flattening, bogus control flow, MBA, MBA float regions, string encryption, to its measurable fingerprint in the binary.",
+      "Mapped each enabled amice pass, flattening and VM-flattening, bogus control flow, indirect branch, MBA, and string encryption, to its measurable fingerprint in the binary.",
       "Captured real before/after disassembly: a 5-instruction function and a 1-instruction thunk each exploding past 1,050 instructions.",
       "Argued why control-flow flattening is already a crude virtual machine, making code virtualization the logical next protection tier.",
     ],
